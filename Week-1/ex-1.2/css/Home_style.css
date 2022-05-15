@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: sticky;
+  /* width: 5%; */
+  display: block;
+  padding: 2px;
+  background-color: rgb(146, 143, 143);
+}
+
+li {
+  padding: 30px 10px;
+  list-style: none;
+}
+
+.material-icons-black,
+.material-icons-white {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  padding: auto;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  height: 350px;
+  position: absolute;
+  margin: auto;
+  border: 1px solid green;
+  background-color: rgb(61, 60, 60);
+}
+
+.header-img {
+  position: absolute;
+  display: inline;
+  margin-top: 55px;
+  margin-left: 105px;
+}
+
+.header-text-content {
+  /* border: 1px solid gold; */
+  position: relative;
+  margin-left: 390px;
+  margin-top: 55px;
+  display: inline-block;
+  color: aliceblue;
+}
+
+.title-text {
+  display: inline;
+  font-family: "Lato", sans-serif;
+  padding: 0;
+}
+
+.title-text h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.title-text h4 {
+  margin: 0;
+}
+
+.material-icons-white {
+  position: relative;
+  float: left;
+  margin-top: 150px;
+  /* border: 1px solid green; */
+}
+
+.material-icons-white h6 {
+  font-size: small;
+  font-family: "Material Icons";
+  display: inline;
+}
+
+.songs-list {
+  /* border: 1px solid red; */
+  position: absolute;
+  width: 100%;
+  margin-top: 360px;
+  margin-left: 55px;
+}
+
+.songs-list li {
+  display: block;
+  padding: 24px;
+}
+
+.songs-list li h6 {
+  display: inline;
+  float: inline-start;
+  margin: 0 300px 0 0;
+  font-size: large;
+}
+
+#author {
+  padding: 70px;
+}
+
+.cloud-sync-link {
+  border: 1px solid grey;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+footer {
+  background-color: rgb(179, 135, 192);
+  position: absolute;
+  width: 100%;
+  float: left;
+  /* border: 1px solid red; */
+}
+
+.footer-image {
+  image-resolution: 10px;
+  display: inline-block;
+}
+
+.footer-text {
+  /* border: 1px solid red; */
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin: 50px 900px 0 0;
+}
+
+.footer-text h5 {
+  font-family: "Lato", sans-serif;
+  font-size: medium;
+  color: aliceblue;
+}
+
+.footer-buttons {
+  /* border: 1px solid red; */
+  /* display: inline-block; */
+  float: right;
+  margin-top: 100px;
+  color: aliceblue;
+}
+
+.footer-buttons li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 100px 0 0;
+}
