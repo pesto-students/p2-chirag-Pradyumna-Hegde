@@ -2,17 +2,35 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-  background-color: burlywood;
+  background-color: rgb(245, 215, 177);
   font-family: "Oswald", sans-serif;
 }
 
-h1 {
+header h1 {
   font-size: 80px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
-p {
+header p {
   font-size: large;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.blog-post-content {
+  background-color: burlywood;
+  margin: 0 200px;
+}
+
+.blog-post-content p {
+  font-size: 25px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.highlight-first-word {
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: underline;
 }
