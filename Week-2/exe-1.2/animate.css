@@ -1,0 +1,39 @@
+main {
+  margin: 50px;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 900px;
+  height: 900px;
+}
+
+.orange,
+.blue,
+.yellow,
+.black {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.orange {
+  background-color: orange;
+  display: inline-block;
+}
+
+.blue {
+  background-color: blue;
+  display: inline-block;
+}
+
+.yellow {
+  background-color: yellow;
+  display: inline-block;
+}
+
+.black {
+  background-color: black;
+  display: inline-block;
+}
