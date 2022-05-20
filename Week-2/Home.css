@@ -12,7 +12,7 @@ header h1 {
 }
 
 header p {
-  font-size: large;
+  font-size: 30px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 0;
@@ -21,16 +21,71 @@ header p {
 
 .blog-post-content {
   background-color: burlywood;
+  border-radius: 8px;
+  box-shadow: 2px 2px 30px;
   margin: 0 200px;
+  margin-bottom: 120px;
 }
 
 .blog-post-content p {
   font-size: 25px;
   font-family: "Fira Sans", sans-serif;
+  padding: 20px;
+  text-align: justify;
 }
 
 .highlight-first-word {
   font-weight: bold;
   font-size: 28px;
   text-decoration: underline;
+}
+
+.blog-post-content a {
+  font-weight: bold;
+  padding-left: 15px;
+  color: brown;
+}
+
+.three-articles {
+  /* border: 2px solid goldenrod; */
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin: 0 0 100px 0;
+}
+
+.three-articles article {
+  background-color: burlywood;
+  border: 2px solid burlywood;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 2px 2px 30px;
+}
+
+.article-title {
+  /* background-color: rgb(245, 215, 177); */
+  font-weight: bold;
+  font-size: 28px;
+  border-bottom: 5px solid rgb(245, 215, 177);
+  margin: 0;
+  padding: 20px;
+}
+
+.article-summary {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: 0;
+  padding: 15px;
+}
+
+.article-link {
+  text-decoration: none;
+  padding: 10px;
+  background-color: brown;
+  border-radius: 4px;
+  color: whitesmoke;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "Fira Sans", sans-serif;
 }
