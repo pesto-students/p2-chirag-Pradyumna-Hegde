@@ -1,0 +1,166 @@
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color: rgb(245, 215, 177);
+  font-family: "Oswald", sans-serif;
+}
+
+header h1 {
+  font-size: 80px;
+  margin-bottom: 0;
+}
+
+header p {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.blog-post-content {
+  background-color: burlywood;
+  border-radius: 8px;
+  box-shadow: 2px 2px 30px;
+  margin: 0 200px;
+  margin-bottom: 120px;
+}
+
+.blog-post-content p {
+  font-size: 25px;
+  font-family: "Fira Sans", sans-serif;
+  padding: 20px;
+  text-align: justify;
+}
+
+.highlight-first-word {
+  font-weight: bold;
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+.blog-post-content a {
+  font-weight: bold;
+  padding-left: 15px;
+  color: brown;
+}
+
+.three-articles {
+  /* border: 2px solid goldenrod; */
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin: 0 0 100px 0;
+}
+
+.three-articles article {
+  background-color: burlywood;
+  border: 2px solid burlywood;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 2px 2px 30px;
+}
+
+.article-title {
+  /* background-color: rgb(245, 215, 177); */
+  font-weight: bold;
+  font-size: 28px;
+  border-bottom: 5px solid rgb(245, 215, 177);
+  margin: 0;
+  padding: 20px;
+}
+
+.article-summary {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: 0;
+  padding: 15px;
+}
+
+.article-link {
+  text-decoration: none;
+  padding: 10px;
+  background-color: brown;
+  border-radius: 4px;
+  color: whitesmoke;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.form {
+  background-color: burlywood;
+  text-align: left;
+  margin-left: 25%;
+  width: 50%;
+  border: 5px solid rgb(182, 139, 83);
+  border-radius: 15px;
+  box-shadow: 2px 2px 30px;
+}
+
+.form label {
+  display: block;
+  margin-left: 6%;
+  font-size: 22px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.form h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  border-bottom: 1px solid rgb(245, 215, 177);
+  margin: 0;
+  padding: 20px;
+}
+
+label:first-of-type {
+  margin-top: 20px;
+}
+
+input[type="text"],
+button {
+  width: 40%;
+  padding: 14px 22px;
+  display: block;
+  border: 3px solid rgb(182, 139, 83);
+  border-radius: 5px;
+  margin: 5px 0 50px 6%;
+  font-size: 18px;
+}
+
+.form textarea {
+  margin: 5px 0 50px 6%;
+  border: 3px solid rgb(182, 139, 83);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.form button {
+  background-color: brown;
+  border: 3px solid brown;
+  margin-left: 56%;
+  color: white;
+  font-size: 20px;
+}
+
+.form button:hover {
+  background-color: rgb(189, 69, 69);
+}
+
+footer {
+  margin-top: 10%;
+  width: 100%;
+  height: 20%;
+  background-color: brown;
+}
+
+footer p {
+  margin: 0;
+  padding: 30px;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  color: white;
+}

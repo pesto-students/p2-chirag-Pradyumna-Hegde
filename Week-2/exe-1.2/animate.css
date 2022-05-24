@@ -1,0 +1,43 @@
+main {
+  margin: 50px;
+  border: 2px solid black;
+  border-radius: 4px;
+  width: 900px;
+  height: 900px;
+  text-align: center;
+}
+
+#orange,
+#blue,
+#yellow,
+#black {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  transition-property: transform;
+  transition-delay: 3s;
+  transition-timing-function: ease;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#black {
+  background-color: black;
+}
+
+#orange:hover {
+  transform: rotate(90deg);
+}
