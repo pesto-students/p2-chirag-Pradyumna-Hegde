@@ -8,48 +8,55 @@ Exercise-4.1:
     4.Should be able to accept callbacks as props.
 */
 
-
 function getRandomNumber() {
-    return Math.floor(Math.random() * 11);
+  return Math.floor(Math.random() * 11);
 }
-
 
 //creating the state object.
 const STATE = {
-    PENDING: 'PENDING',
-    RESOLVED: 'RESOLVED',
-    REJECTED: 'REJECTED'
-}
+  PENDING: "PENDING",
+  RESOLVED: "RESOLVED",
+  REJECTED: "REJECTED",
+};
 
 class Pramise {
-    constructor (callback) { //callback is a function.
-        this.state = STATE.PENDING; //Initial state of Promise is empty.
-        this.value = undefined;
-        this.handlers = [];
+  constructor(callback) {
+    //callback is a function.
+    this.state = STATE.PENDING; //Initial state of Promise is empty.
+    this.value = undefined;
+    this.handlers = [];
 
-        //Invoking the callback function by passing the presolve and the preject function of our class.
-        try {
-            callback(this.presolve, this.preject);
-        } catch (error) {
-            this.preject(error);
-        }
+    //Invoking the callback function by passing the presolve and the preject function of our class.
+    try {
+      callback(this.presolve, this.preject, time);
+    } catch (error) {
+      this.preject(error);
     }
+  }
 
-    //presolve() method.
-    presolve = (value) => {}
+  //presolve() method.
+  presolve = (value) => {
+    this.updateState(value, STATE.RESOLVED);
+  };
 
-    //preject() method.
-    preject = (error) => {}
+  //preject() method.
+  preject = (error) => {
+    this.updateState(error, STATE.REJECTED);
+  };
 
-    then(onPass, onFail) {
+  /* creating the updateState() method */
+  updateState(value, state) {
+    setTimeout(() => {
+      if (this.state !== STATE.PENDING) {
+        return;
+      }
 
-    }
+      this.value = value;
+      this.state = state;
+    }, 0);
+  }
 
-    catch(onFail) {
+  then(onPass, onFail) {}
 
-    }
-
-    finally(callback) {
-
-    }
+  catch(onFail) {}
 }
