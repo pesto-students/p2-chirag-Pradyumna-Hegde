@@ -20,12 +20,13 @@ const STATE = {
 };
 
 class Pramise {
-  constructor(callback) {
-    //callback is a function.
-    this.state = STATE.PENDING; //Initial state of Promise is empty.
-    this.value = undefined;
-    this.handlers = [];
+  //callback is a function.
+  state = STATE.PENDING; //Initial state of Promise is empty.
+  value = undefined;
+  then_callbacks = [];
+  catch_callbacks = [];
 
+  constructor(callback) {
     //Invoking the callback function by passing the presolve and the preject function of our class.
     try {
       callback(this.presolve, this.preject, time);
@@ -35,28 +36,44 @@ class Pramise {
   }
 
   //presolve() method.
-  presolve = (value) => {
+  presolve(value) {
     this.updateState(value, STATE.RESOLVED);
-  };
+  }
 
   //preject() method.
-  preject = (error) => {
+  preject(error) {
     this.updateState(error, STATE.REJECTED);
-  };
+  }
 
   /* creating the updateState() method */
   updateState(value, state) {
-    setTimeout(() => {
-      if (this.state !== STATE.PENDING) {
-        return;
-      }
-
-      this.value = value;
-      this.state = state;
-    }, 0);
+    if (this.state !== STATE.PENDING) {
+      return;
+    }
+    this.value = value;
+    this.state = state;
+    this.execute_callbacks();
   }
 
-  then(onPass, onFail) {}
+  execute_callbacks() {
+    if (this.state === STATE.RESOLVED) {
+      this.then_callbacks.forEach((callback) => {
+        callback(this.value);
+      });
+      this.then_callbacks = [];
+    } else {
+      this.then_callbacks.forEach((callback) => {
+        callback(this.value);
+      });
+      this.then_callbacks = [];
+    }
+  }
+
+  then(then_cb, catch_cb) {
+    if (this.then_cb !== null) this.then_callbacks.push(callback);
+    if (this.catch_cb !== null) this.catch_callbacks.push(callback);
+    this.execute_callbacks();
+  }
 
   catch(onFail) {}
 }
