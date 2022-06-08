@@ -29,30 +29,29 @@ class Pramise {
   constructor(callback) {
     //Invoking the callback function by passing the presolve and the preject function of our class.
     try {
-      callback(this.presolve, this.preject, time);
+      callback(this.risolve, this.riject);
     } catch (error) {
-      this.preject(error);
+      this.riject(error);
     }
   }
 
-  //presolve() method.
-  presolve(value) {
+  //risolve() method.
+  risolve(value) {
     this.updateState(value, STATE.RESOLVED);
   }
 
-  //preject() method.
-  preject(error) {
+  //riject() method.
+  riject(error) {
+    //error is usually an Object (eg: new Error('message');)
     this.updateState(error, STATE.REJECTED);
   }
 
   /* creating the updateState() method */
   updateState(value, state) {
-    if (this.state !== STATE.PENDING) {
-      return;
-    }
+    if (this.state !== STATE.PENDING) return;
+
     this.value = value;
     this.state = state;
-    this.execute_callbacks();
   }
 
   execute_callbacks() {
@@ -71,8 +70,9 @@ class Pramise {
 
   then(then_cb, catch_cb) {
     if (this.then_cb !== null) this.then_callbacks.push(callback);
-    if (this.catch_cb !== null) this.catch_callbacks.push(callback);
+    else this.catch_callbacks.push(callback);
     this.execute_callbacks();
+    return new Pramise(callback);
   }
 
   catch(onFail) {}
