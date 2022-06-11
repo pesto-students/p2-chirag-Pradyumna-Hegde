@@ -8,16 +8,6 @@ async function displayCommits() {
 displayCommits();
 
 
-
-
-
-
-
-
-
-
-
-
 /* creating the function  to get the user{} object from the database. */
 function getUser(id) {
   return new Promise((resolve, reject) => {
