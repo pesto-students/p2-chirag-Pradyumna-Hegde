@@ -17,4 +17,5 @@ function compare_and_subtract(a, b) {
 
 
 const array =  [5, 10, 3, 2, 50, 80];
-console.log(pair_with_given_difference(array, 78));
+const result = pair_with_given_difference(array, 78);
+console.log(result);
