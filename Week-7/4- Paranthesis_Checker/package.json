@@ -1,0 +1,12 @@
+{
+  "name": "paranthesis_checker",
+  "version": "1.0.0",
+  "description": "This package contains the information of Stack Implementation which I am going to use in this project called Paranthesis Checker",
+  "main": "Stack.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Pradyumna-Hegde",
+  "license": "ISC"
+}
