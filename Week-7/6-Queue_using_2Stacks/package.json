@@ -1,0 +1,12 @@
+{
+  "name": "queue_special",
+  "version": "1.0.0",
+  "description": "This project contains the implementation of Queue using two stacks",
+  "main": "Queue_Special.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Pradyumna-Hegde",
+  "license": "ISC"
+}

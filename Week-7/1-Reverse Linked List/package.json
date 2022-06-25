@@ -1,0 +1,12 @@
+{
+  "name": "reverse-linkedlist",
+  "version": "1.0.0",
+  "description": "This package contains program that reverse the linkedList",
+  "main": "Reverse_LinkedList.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Pradyumna-Hegde",
+  "license": "ISC"
+}
