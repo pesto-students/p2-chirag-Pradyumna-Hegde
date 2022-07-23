@@ -1,0 +1,21 @@
+.center-element {
+  color: #29528f;
+  text-align: center;
+}
+
+.for-p {
+  flex: 0 0 auto;
+}
+
+.grid-border {
+  border: 1px solid #0d6efd;
+}
+
+.medium-border {
+  --primary-color: #29528f;
+  border-color: var(--primary-color);
+}
+
+.text-color {
+  color: #6c757d;
+}
