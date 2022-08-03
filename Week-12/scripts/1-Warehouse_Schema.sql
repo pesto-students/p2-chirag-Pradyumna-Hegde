@@ -18,9 +18,10 @@ USE `Warehouse` ;
 -- Table `Warehouse`.`cities`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Warehouse`.`cities` (
+  `city_id` INT NOT NULL,
   `city` CHAR(20) NOT NULL,
   `state` CHAR(20) NOT NULL,
-  PRIMARY KEY (`city`))
+  PRIMARY KEY (`city_id`))
 ENGINE = InnoDB;
 
 
@@ -29,17 +30,17 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Warehouse`.`warehouses` (
   `warehouse_id` INT NOT NULL,
-  `cities_city` CHAR(20) NOT NULL,
+  `city_id` INT NOT NULL,
   `name` CHAR(30) NOT NULL,
   `location` CHAR(20) NOT NULL,
   `extraContext` JSON NULL,
   PRIMARY KEY (`warehouse_id`),
-  INDEX `fk_warehouses_cities_idx` (`cities_city` ASC) VISIBLE,
-  CONSTRAINT `fk_warehouses_cities`
-    FOREIGN KEY (`cities_city`)
-    REFERENCES `Warehouse`.`cities` (`city`)
+  INDEX `fk_warehouses_cities1_idx` (`city_id` ASC) VISIBLE,
+  CONSTRAINT `fk_warehouses_cities1`
+    FOREIGN KEY (`city_id`)
+    REFERENCES `Warehouse`.`cities` (`city_id`)
     ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -103,43 +104,43 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Warehouse`.`items_has_orders`
+-- Table `Warehouse`.`stores_has_items`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Warehouse`.`items_has_orders` (
-  `items_item_id` INT NOT NULL,
-  `orders_order_id` INT NOT NULL,
-  PRIMARY KEY (`items_item_id`, `orders_order_id`),
-  INDEX `fk_items_has_orders_orders1_idx` (`orders_order_id` ASC) VISIBLE,
-  INDEX `fk_items_has_orders_items1_idx` (`items_item_id` ASC) VISIBLE,
-  CONSTRAINT `fk_items_has_orders_items1`
-    FOREIGN KEY (`items_item_id`)
-    REFERENCES `Warehouse`.`items` (`item_id`)
+CREATE TABLE IF NOT EXISTS `Warehouse`.`stores_has_items` (
+  `store_id` INT NOT NULL,
+  `item_id` INT NOT NULL,
+  PRIMARY KEY (`store_id`, `item_id`),
+  INDEX `fk_stores_has_items_items1_idx` (`item_id` ASC) VISIBLE,
+  INDEX `fk_stores_has_items_stores1_idx` (`store_id` ASC) VISIBLE,
+  CONSTRAINT `fk_stores_has_items_stores1`
+    FOREIGN KEY (`store_id`)
+    REFERENCES `Warehouse`.`stores` (`store_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_items_has_orders_orders1`
-    FOREIGN KEY (`orders_order_id`)
-    REFERENCES `Warehouse`.`orders` (`order_id`)
+  CONSTRAINT `fk_stores_has_items_items1`
+    FOREIGN KEY (`item_id`)
+    REFERENCES `Warehouse`.`items` (`item_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Warehouse`.`stores_has_items`
+-- Table `Warehouse`.`orders_has_items`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Warehouse`.`stores_has_items` (
-  `stores_store_id` INT NOT NULL,
-  `items_item_id` INT NOT NULL,
-  PRIMARY KEY (`stores_store_id`, `items_item_id`),
-  INDEX `fk_stores_has_items_items1_idx` (`items_item_id` ASC) VISIBLE,
-  INDEX `fk_stores_has_items_stores1_idx` (`stores_store_id` ASC) VISIBLE,
-  CONSTRAINT `fk_stores_has_items_stores1`
-    FOREIGN KEY (`stores_store_id`)
-    REFERENCES `Warehouse`.`stores` (`store_id`)
+CREATE TABLE IF NOT EXISTS `Warehouse`.`orders_has_items` (
+  `order_id` INT NOT NULL,
+  `item_id` INT NOT NULL,
+  PRIMARY KEY (`order_id`, `item_id`),
+  INDEX `fk_orders_has_items_items1_idx` (`item_id` ASC) VISIBLE,
+  INDEX `fk_orders_has_items_orders1_idx` (`order_id` ASC) VISIBLE,
+  CONSTRAINT `fk_orders_has_items_orders1`
+    FOREIGN KEY (`order_id`)
+    REFERENCES `Warehouse`.`orders` (`order_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_stores_has_items_items1`
-    FOREIGN KEY (`items_item_id`)
+  CONSTRAINT `fk_orders_has_items_items1`
+    FOREIGN KEY (`item_id`)
     REFERENCES `Warehouse`.`items` (`item_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
