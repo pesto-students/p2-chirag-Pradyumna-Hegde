@@ -29,7 +29,15 @@ app.get("/getCity", async (req, res) => {
     const data = await getCityData(cities[i]);
     result.push(data);
   }
-  res.send(result);
+
+  /* Adding the pagination */
+  const page = !req.query.page ? 1 : parseInt(req.query.page);
+  const limit = parseInt(req.query.limit);
+  const start_index = (page - 1) * limit;
+  const end_index = page * limit;
+
+  const result_cities = result.slice(start_index, end_index);
+  res.send(result_cities);
 });
 
 app.get("/getWeatherForecast", async (req, res) => {
@@ -41,6 +49,7 @@ app.get("/getWeatherForecast", async (req, res) => {
     const data = await getForecastData(cities[i], days);
     result.push(data);
   }
+  console.log(result_cities);
   res.send(result);
 });
 
