@@ -64,11 +64,13 @@ CREATE TABLE IF NOT EXISTS transactions
 (
     transaction_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     customer_id INT FOREIGN KEY NOT NULL,
-    assit_id INT FOREIGN KEY NOT NULL,
+    asset_id INT FOREIGN KEY NOT NULL,
     amount_type_id INT FOREIGN KEY NOT NULL,
     amount INT NOT NULL,
     date DATE NOT NULL
 );
+
+INSERT INTO transactions VALUES (DEFAULT, 1, 1, 1, 5000, "2022-08-21");
 
 
 
